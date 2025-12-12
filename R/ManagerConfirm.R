@@ -18,7 +18,7 @@ ChecknoteConfirm <- function(statementNo) {
     app = mdl$CheckNote(clientId=clientId,
                       clientSecret=clientSecret,
                       userName=username,password=password,env="prd",debug=0)
-    res =app$conform(statementNo='",statementNo,"')
+    res =app$conform(statementNo=statementNo)
   })
   
   
@@ -46,7 +46,7 @@ ChecknoteInvoice <- function(statementNo) {
     app = mdl$Invoice(clientId=clientId,
                         clientSecret=clientSecret,
                         userName=username,password=password,env="prd",debug=0)
-    res =app$apply(statementNo='",statementNo,"')
+    res =app$apply(statementNo=statementNo)
   })
   
   
@@ -57,7 +57,7 @@ ChecknoteInvoice <- function(statementNo) {
 
 #' 对账单删除
 #'
-#' @param statementNo 第二个参数
+#' @param statementID 
 #'
 #' @return 两个数的和
 #' @export
@@ -66,7 +66,6 @@ ChecknoteInvoice <- function(statementNo) {
 #' ChecknotedeleteMessage
 ChecknotedeleteMessage <- function(statementID) {
   clientId = "A775726"
-  # clientId = "A775726"
   clientSecret = "1qaz3edc"
   username = "M2_JaourHotMeltA"
   password = "ef73781effc5774100f87fe2f437a435"
@@ -75,7 +74,7 @@ ChecknotedeleteMessage <- function(statementID) {
     app = mdl$CheckNote(clientId=clientId,
                         clientSecret=clientSecret,
                         userName=username,password=password,env="prd",debug=0)
-    res =app$deleteMessage(id='",statementID,"')
+    res =app$deleteMessage(id=statementID)
   })
   
   
